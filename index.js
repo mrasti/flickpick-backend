@@ -11,7 +11,7 @@ const app = express();
 app.use(parser.json());
 app.use(cors());
 app.use(express.json());
-app.use("/user", UserRouter);
+app.use("/api/user/", UserRouter);
 app.use(passport.initialize());
 
 app.use("/api/movies/", MovieRouter);

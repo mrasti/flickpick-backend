@@ -70,5 +70,17 @@ module.exports = {
         res.json(user);
       });
     });
+  },
+  removeMovie: (req, res) => {
+    const userId = req.params.userId;
+    const movieId = req.params.movieId;
+    User.findById(userId).then(user => {
+      if (user.favorites.includes(movieId)) {
+        let index = user.favorites.indexOf(movieId);
+        user.favorites.splice(index, 1);
+        user.save();
+        res.json(user);
+      }
+    });
   }
 };

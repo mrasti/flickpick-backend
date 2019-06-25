@@ -4,6 +4,7 @@ const userController = require("../controllers/UserController");
 
 router.post("/signup", userController.signUp);
 router.post("/login", userController.logIn);
-router.put("/:userId/:movieId", userController.addMovie);
+router.put("/add/:userId/:movieId", userController.addMovie);
+router.put("/remove/:userId/:movieId", userController.removeMovie);
 
 module.exports = router;
