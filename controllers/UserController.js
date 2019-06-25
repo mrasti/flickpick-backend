@@ -60,28 +60,13 @@ module.exports = {
       res.sendStatus(401);
     }
   },
-  addMovie (req, res) =>{
-    User.findById(userId).then(user=>{
-      Movie.findById(movieId).then(movie=>{
+  addMovie: (req, res) => {
+    User.findById(userId).then(user => {
+      Movie.findById(movieId).then(movie => {
         user.favorites.push(movie._id);
-        user.save()
-        res.json(user)
-      })
-    })
+        user.save();
+        res.json(user);
+      });
+    });
   }
 };
-
-router.put(":/userId:/bookmarkId", (req, res) => {
-  const userId = req.params.userId;
-  const bookmarkId = req.params.bookmarkId;
-
-  User.findById(userId).then(user => {
-    Bookmark.findById(bookmarkId).then(bookmark => {
-      user.favorites.push(bookmark._id);
-      bookmark.favorited.push(user._id);
-      user.save();
-      bookmark.save();
-      res.json(user);
-    });
-  });
-});
