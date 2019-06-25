@@ -1,16 +1,20 @@
-
 const express = require("express");
+const parser = require("body-parser");
+const passport = require("./config/passport")();
 const cors = require("cors");
 
-const MovieRouter = require('./routes/MovieRouter');
+const MovieRouter = require("./routes/MovieRouter");
+const UserRouter = require("./routes/UserRouter");
 
 const app = express();
 
+app.use(parser.json());
 app.use(cors());
-app.use(express.json())
+app.use(express.json());
+app.use("/user", UserRouter);
+app.use(passport.initialize());
 
-app.use('/api/movies/', MovieRouter);
-
+app.use("/api/movies/", MovieRouter);
 
 // app.set("port", process.env.PORT || 8080);
 
@@ -19,5 +23,5 @@ app.use('/api/movies/', MovieRouter);
 // });
 
 app.listen(3000, () => {
-    console.log("app listening on port 3000");
+  console.log("app listening on port 3000");
 });
