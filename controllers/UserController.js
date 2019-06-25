@@ -59,14 +59,14 @@ module.exports = {
     } else {
       res.sendStatus(401);
     }
-  },
-  addMovie: (req, res) => {
-    User.findById(userId).then(user => {
-      Movie.findById(movieId).then(movie => {
-        user.favorites.push(movie._id);
-        user.save();
-        res.json(user);
-      });
-    });
   }
+  // addMovie: (req, res) => {
+  //   User.findById(userId).then(user => {
+  //     Movie.findById(movieId).then(movie => {
+  //       user.favorites.push(movie._id);
+  //       user.save();
+  //       res.json(user);
+  //     });
+  //   });
+  // }
 };
