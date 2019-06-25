@@ -20,16 +20,21 @@ User {
 
 ```
 Movie {
+  id: Number,
   title: String,
-  videoExists: Boolean,
-  videoKey: String,
+  overview: String,
   popularity: Number,
+  adult: Boolean,
+  original_language: String,
   posterImage: String,
   backdropImage: String,
-  overview: String,
-  genre: [],
-  castAndCrew: [],
-  adult: Boolean
+  videoExists: Boolean,
+  videoKey: String,
+  vote_average: Number,
+  release_date: Date,
+  genre_ids: Array,
+  cast_crew: [],
+  genres: []
 }
 ```
 
