@@ -7,7 +7,7 @@ const User = new Schema({
   favorites: [
     {
       ref: "Movie",
-      type: mongoose.Schema.Types.ObjectId
+      type: Schema.Types.ObjectId
     }
   ]
 });

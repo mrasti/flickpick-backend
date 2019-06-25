@@ -1,6 +1,6 @@
-const express = require("express");
+// const express = require("express");
 const jwt = require("jwt-simple");
-const passport = require("../config/passport");
+// const passport = require("../config/passport");
 const config = require("../config/config");
 const mongoose = require("../models/User");
 const User = mongoose.model("User");
