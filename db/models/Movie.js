@@ -15,6 +15,7 @@ const Movie = new Schema({
     videoKey: String,
     vote_average: Number,
     release_date: Date,
+    genre_ids: Array,
     cast_crew: [{
         type: Schema.Types.ObjectId,
         ref: 'Crew'
