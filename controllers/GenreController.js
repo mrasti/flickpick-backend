@@ -1,5 +1,5 @@
 
-const Genre = require('../db/models/Genre')
+const Genre = require('../db/models/Genre');
 
 module.exports = {
     getAllGenres: (req, res) => {
