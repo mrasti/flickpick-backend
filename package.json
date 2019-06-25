@@ -6,6 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.5.13",
+    "node-fetch": "^2.6.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ashanevs/flickpick-api.git"
