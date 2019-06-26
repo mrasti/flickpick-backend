@@ -7,7 +7,7 @@ router.post("/signup", userController.signUp);
 router.post("/login", userController.logIn);
 router.put(
   "/add/:userId/:movieId",
-  passport.authenticate("jwt", { session: false }),
+  // passport.authenticate("jwt", { session: false }),
   userController.addMovie
 );
 router.put(
