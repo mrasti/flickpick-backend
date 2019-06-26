@@ -23,8 +23,7 @@ function readVideos(arr, index){
     .then(data => {
         apiCallCounter++;
         let delay = 0;
-        if(apiCallCounter == 35){
-            apiCallCounter = 0;
+        if(apiCallCounter%35 === 0){
             delay = 10000;
         }
 
