@@ -23,7 +23,8 @@ module.exports = {
               var token = jwt.encode(payload, config.jwtSecret);
               newUser.id = token;
               res.json({
-                token: token
+                token: token,
+                userId: user._id
               });
             } else {
               res.sendStatus(401);
@@ -47,7 +48,8 @@ module.exports = {
             };
             var token = jwt.encode(payload, config.jwtSecret);
             res.json({
-              token: token
+              token: token,
+              userId: user._id
             });
           } else {
             res.sendStatus(401);
