@@ -1,4 +1,3 @@
-const passport = require("passport");
 const passportJWT = require("passport-jwt");
 const ExtractJwt = passportJWT.ExtractJwt;
 const Strategy = passportJWT.Strategy;
@@ -13,26 +12,19 @@ const params = {
   jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken()
 };
 
-module.exports = function() {
-  let strategy = new Strategy(params, (payload, callback) => {
-    let user = User.findById(payload.id) || null;
-    if (user) {
-      return callback(null, {
-        id: user.id
-      });
-    } else {
-      return callback(new Error("User not found"), null);
-    }
-  });
-
-  passport.use(strategy);
-
-  return {
-    initialize: function() {
-      return passport.initialize();
-    },
-    authenticate: function() {
-      return passport.authenticate("jwt", { session: false });
-    }
-  };
+module.exports = passport => {
+  passport.use(
+    new Strategy(params, (payload, done) => {
+      User.findById(payload.id)
+        .then(user => {
+          if (user) {
+            return done(null, {
+              id: user.id
+            });
+          }
+          return done(null, false);
+        })
+        .catch(err => console.error(err));
+    })
+  );
 };

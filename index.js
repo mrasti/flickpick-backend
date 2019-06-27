@@ -1,24 +1,28 @@
 const express = require("express");
 const parser = require("body-parser");
-const passport = require("./config/passport")();
+const passport = require("passport");
 const cors = require("cors");
 
-const MovieRouter = require('./routes/MovieRouter');
-const GenreRouter = require('./routes/GenreRouter');
+const MovieRouter = require("./routes/MovieRouter");
+const GenreRouter = require("./routes/GenreRouter");
 const UserRouter = require("./routes/UserRouter");
 
 const app = express();
 
 app.use(parser.json());
 app.use(cors());
-app.use(express.json())
+app.use(express.json());
 
-app.use('/api/movies/', MovieRouter);
-app.use('/api/genre/', GenreRouter);
-app.use("/api/user/", UserRouter);
 app.use(passport.initialize());
+require("./config/passport")(passport);
 
+<<<<<<< HEAD
 // app.use("/api/movies/", MovieRouter);
+=======
+app.use("/api/movies/", MovieRouter);
+app.use("/api/genre/", GenreRouter);
+app.use("/api/user/", UserRouter);
+>>>>>>> 51a111762b0962dd233200d60736fcd050121b3a
 
 // app.set("port", process.env.PORT || 8080);
 
