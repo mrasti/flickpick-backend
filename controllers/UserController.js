@@ -7,6 +7,13 @@ const User = mongoose.model("User");
 const Movie = mongoose.model("Movie");
 
 module.exports = {
+  getById: (req, res) => {
+    User.findOne({ _id: req.params.id })
+      .populate("favorites")
+      .exec(function(err, thisUser) {
+        res.json(thisUser);
+      });
+  },
   signUp: (req, res) => {
     if (req.body.email && req.body.password) {
       let newUser = {
