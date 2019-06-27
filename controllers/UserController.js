@@ -91,5 +91,10 @@ module.exports = {
         res.json(user);
       }
     });
+  },
+  delete: (req, res) => {
+    User.findByIdAndDelete(req.params.userId).then(user => {
+      res.json(user);
+    });
   }
 };

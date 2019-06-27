@@ -16,5 +16,6 @@ router.put(
   passport.authenticate("jwt", { session: false }),
   userController.removeMovie
 );
+router.delete("/:userId", userController.delete);
 
 module.exports = router;
