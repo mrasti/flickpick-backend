@@ -10,8 +10,8 @@ function addDetailsToArray(data) {
 
 module.exports = {
     getRandomFive: (req, res) => {
-        var skipCount = Math.floor(Math.random()*1995);
-        Movie.find({}).skip(skipCount).limit(5).then(m => res.json(addDetailsToArray(m)));
+        var skipCount = Math.floor(Math.random()*1994);
+        Movie.find({}).skip(skipCount).limit(6).then(m => res.json(addDetailsToArray(m)));
     },
     getById: (req, res) => {
         Movie.find({id: req.params.id}).then(m => res.json(addDetailsToArray(m)));
