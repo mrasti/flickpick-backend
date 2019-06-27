@@ -8,11 +8,14 @@ function addDetailsToArray(data) {
 }
 
 module.exports = {
-  getRandomSix: (req, res) => {
-    var skipCount = Math.floor(Math.random() * 1994);
+  getAllMovies: (req, res) => {
+    Movie.find({}).then(m => res.json(addDetailsToArray(m)));
+  },
+  getRandomMovies: (req, res) => {
+    var skipCount = Math.floor(Math.random() * 1979);
     Movie.find({})
       .skip(skipCount)
-      .limit(6)
+      .limit(21)
       .then(m => res.json(addDetailsToArray(m)));
   },
   getById: (req, res) => {
