@@ -22,7 +22,12 @@ module.exports = {
     Movie.find({ id: req.params.id }).then(m => res.json(addDetailsToArray(m)));
   },
   getByTitle: (req, res) => {
-    Movie.find({ title: req.params.title }).then(m =>
+    Movie.find({ title: req.params.title }).limit(6).then(m =>
+      res.json(addDetailsToArray(m))
+    );
+  },
+  searchByTitle: (req, res) => {
+    Movie.find({ title: new RegExp(req.params.title, "ig") }).limit(6).then(m =>
       res.json(addDetailsToArray(m))
     );
   },

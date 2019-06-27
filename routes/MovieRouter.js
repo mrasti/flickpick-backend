@@ -6,5 +6,6 @@ router.get("/", controller.getRandomMovies);
 router.get("/allmovies", controller.getAllMovies);
 router.get("/:id", controller.getById);
 router.get("/title/:title", controller.getByTitle);
+router.get("/search/:title", controller.searchByTitle);
 
 module.exports = router;
