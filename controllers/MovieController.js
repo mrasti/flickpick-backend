@@ -8,7 +8,7 @@ function addDetailsToArray(data) {
 }
 
 module.exports = {
-  getRandomFive: (req, res) => {
+  getRandomSix: (req, res) => {
     var skipCount = Math.floor(Math.random() * 1994);
     Movie.find({})
       .skip(skipCount)
