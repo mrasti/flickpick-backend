@@ -20,12 +20,12 @@ app.use("/api/movies/", MovieRouter);
 app.use("/api/genre/", GenreRouter);
 app.use("/api/user/", UserRouter);
 
-// app.set("port", process.env.PORT || 8080);
+app.set("port", process.env.PORT || 8080);
 
-// app.listen(app.get("port"), () => {
-//   console.log(`✅ PORT: ${app.get("port")} 🌟`);
-// });
-
-app.listen(3000, () => {
-  console.log("app listening on port 3000");
+app.listen(app.get("port"), () => {
+  console.log(`✅ PORT: ${app.get("port")} 🌟`);
 });
+
+// app.listen(3000, () => {
+//   console.log("app listening on port 3000");
+// });
