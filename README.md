@@ -14,7 +14,7 @@ Melika Rasti: https://github.com/mrasti
 
 ## Technologies Used
 
-Express.js, MongoDB, Mongoose
+Express.js, MongoDB, Mongoose, Passport, Passport-JWT, JWT-Simple
 
 ## Links to Flickpick
 
@@ -83,6 +83,10 @@ in your terminal from the root directory to begin hosting from http://localhost:
 |   delete    |     /api/user/:userId      |  DELETE   |     Deletes an existing user from the database      |
 
 # Project History
+
+The MVP goal was to create a working back end of the API for our full-stack app. We utilized object references between models and used populate to make the relationships between models more flushed out.
+
+As a bonus goal, we implemented authentication and a user model with routes to store favorite movies in a list. Authentication mostly used a dependency called passport and JSON Web Tokens to verify users for access to user actions.
 
 ## Issues
 
