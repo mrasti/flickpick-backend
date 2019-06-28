@@ -102,4 +102,4 @@ The movie GET route using id utilizes a unique id number from the database (~5 d
 
 Source code: https://github.com/ashanevs/flitpick-api
 
-Issue tracker: https://github.com/ashanevs/flickpick/issues
+Issue tracker: https://github.com/ashanevs/flickpick-api/issues
