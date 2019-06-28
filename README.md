@@ -2,7 +2,7 @@
 
 ## Description
 
-Flickpick API is the back end of the Flickpick app. Flickpick is an app where users can sign up, peruse popular movies, and save specific movies into a favorites list. This API includes full CRUD distributed across three models (User, Movie, and Genre) using RESTful routes. The data used was pulled from The Movie Database, found at https://www.themoviedb.org/?language=en-US.
+Flickpick API is the back end of the Flickpick app. Flickpick is an app where users can sign up, peruse popular movies, and save specific movies into a favorites list. This API includes full CRUD distributed across three models (User, Movie, and Genre) using RESTful routes. The data used was pulled from The Movie Database(TMDb), found at https://www.themoviedb.org/?language=en-US.
 
 This app was built by a team of three collaborators:
 
@@ -20,7 +20,7 @@ Express.js, MongoDB, Mongoose
 
 Front end github repository found at: https://github.com/ashanevs/flickpick
 
-Deployed app:
+Deployed app: http://www.flickpick.surge.sh
 
 # Getting Started / Installation Instructions
 
