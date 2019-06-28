@@ -2,11 +2,14 @@
 
 ## Description
 
-Flickpick API is the back end of the Flitpick app. Flitpick is an app where users can sign up, peruse popular movies, and save specific movies into a favorites list. This API includes full CRUD distributed across three models (User, Movie, and Genre) using RESTful routes. The data used was pulled from The Movie Database, found at https://www.themoviedb.org/?language=en-US.
+Flickpick API is the back end of the Flickpick app. Flickpick is an app where users can sign up, peruse popular movies, and save specific movies into a favorites list. This API includes full CRUD distributed across three models (User, Movie, and Genre) using RESTful routes. The data used was pulled from The Movie Database(TMDb), found at https://www.themoviedb.org/?language=en-US.
 
 This app was built by a team of three collaborators:
+
 Shane Vann-Shirley: https://github.com/ashanev
+
 Paula Bannerman: https://github.com/dcartist
+
 Melika Rasti: https://github.com/mrasti
 
 ## Technologies Used
@@ -17,7 +20,7 @@ Express.js, MongoDB, Mongoose
 
 Front end github repository found at: https://github.com/ashanevs/flickpick
 
-Deployed app:
+Deployed app: http://www.flickpick.surge.sh
 
 # Getting Started / Installation Instructions
 
@@ -61,9 +64,10 @@ in your terminal from the root directory to begin hosting from http://localhost:
 
 ## Routes for Genre collection
 
-|     Name     |    Path     | HTTP Verb |       Purpose       |
-| :----------: | :---------: | :-------: | :-----------------: |
-| getAllGenres | /api/genres |    GET    | Displays all genres |
+|       Name       |       Path        | HTTP Verb |            Purpose            |
+| :--------------: | :---------------: | :-------: | :---------------------------: |
+|   getAllGenres   |    /api/genre     |    GET    |      Displays all genres      |
+| getMoviesByGenre | /api/genre/id/:id |    GET    | Displays 21 movies of a genre |
 
 ## Routes for User collection
 
@@ -82,7 +86,13 @@ in your terminal from the root directory to begin hosting from http://localhost:
 
 ## Issues
 
+There is an issue where a user who is "signed up" is not authenticated properly. Otherwise the database functions well and as expected.
+
 ## Prospective Goals
+
+A user must log in even after completing sign up for authentication on some user routes to function propery. It appears to be a back end issue and we hope to resolve this in the future.
+
+The movie GET route using id utilizes a unique id number from the database (~5 digits); ideally this would utilize the mongoose id (stored as \_id) instead.
 
 # Contribution Resources
 
